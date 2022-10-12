@@ -7,7 +7,7 @@
 
 Official code repository :bookmark_tabs: for _EMNLP 2022 Findings_ paper "[SMiLE: Schema-augmented Multi-level Contrastive Learning for Knowledge Graph Link Prediction](https://arxiv.org/abs/2210.04870)".
 
-![SMiLE](D:\ideaWorkPlace\pycharm\SMiLE\overall_framework.png)
+![SMiLE](./overall_framework.png)
 
 In this paper, we identify that most existing embedding-based methods fail to capture contextual information in entity neighborhoods. Additionally, little attention is paid to the diversity of entity representations in different contexts.
 We consider that the schema of KG is beneficial for preserving the consistency of entities across contexts, and we propose a novel **s**chema-augmented **m**ult**i**-level contrastive **le**arning framework (**SMiLE**:blush:) to conduct knowledge graph link prediction.
@@ -18,8 +18,8 @@ Environmental Settings: Linux Ubuntu 18.04.6 LTS, CUDA 10.2, NVIDIA TITAN RTX(24
 Run `pip install -r requirements.txt` to install following dependencies:
 
 - Python 3.6.5
-- Numpy 1.19.5
-- Pandas 1.1.0
+- numpy 1.19.5
+- pandas 1.1.0
 - networkx 2.4
 - scikit_learn 1.1.2
 - torch 1.5.0
@@ -33,12 +33,12 @@ The datasets used in this repository are list in the directory `$REPO_DIR/data`,
 
 ## How to run
 
-### Pretrained node embeddings
+### 1. Pretrained node embeddings
 Download pretrained node embeddings from [here](https://drive.google.com/drive/folders/1BIdgEKeBd-uRwXwF4IULQ_5z4ctNeLKi?usp=sharing), and put them into corresponding dataset directory.
 
 PS: For a new dataset, you can generate the pretrained embeddings by employing [Node2vec](https://github.com/aditya-grover/node2vec) or [CompGCN](https://github.com/malllabiisc/CompGCN).
 
-### Construct schema graph
+### 2. Construct schema graph
 Before starting training on each dataset, schema graph are essential to be generated first.
 
 Run `$REPO_DIR/src/build_schema.py` file with following command:
@@ -48,7 +48,7 @@ python build_schema.py --data_path '/data/$dataset' --topNfilters $topNfilters
 ```
 The generated schema file `schema_ttv-$topNfilters.txt` will be added to corresponding dataset directory.
 
-### Model training and evaluation
+### 3. Model training and evaluation
 
 The following command lists the key parameters to run SMiLE on a dataset (Taking dataset FB15k as an example):
 ```shell
