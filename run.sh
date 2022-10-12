@@ -1,12 +1,6 @@
 #!/bin/bash
 
-#  ----------------------In run_evaluation_main()------------
-#  y_true.shape: (73074,), y_scores.shape: (73074,), y_pred.shape: (73074,)
-#  ROC-AUC: 0.9636079794843976, F1: 0.9053099938720591, AUC: 0.9584924612204003
-#  ----------------------------------------------------------
-
-
-REPO_DIR='/data/pengmiao/workplace/pycharm/SMiLE'
+REPO_DIR='/SMiLE'
 
 dataset='FB15k'
 gpu_id=0
